@@ -15,7 +15,7 @@ if [ "$PAM_TYPE" != "close_session" ]; then
     content="\"attachments\": [ { 
         \"mrkdwn_in\": [\"text\", \"fallback\"], 
         \"fallback\": \"SSH login: $PAM_USER connected to \`$host\`\", 
-        \"text\": \"SSH login to \`$host\`\", 
+        \"text\": \"⚠SSH login to \`$host\`\", 
         \"fields\": [ 
             { 
                 \"title\": \"User\", 
@@ -34,8 +34,8 @@ if [ "$PAM_TYPE" != "close_session" ]; then
         \"channel\": \"$channel\", 
         \"mrkdwn\": true, 
         \"username\": \"SSH Notifications\", 
-        $content, \"icon_emoji\": 
-        \":inbox-tray:\"}" "$url"
+        $content
+    }" "$url"
 
 
     # play sound
